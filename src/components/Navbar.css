@@ -14,14 +14,30 @@
   z-index: 1000;
 }
 
+/* ✅ FLIPSTUDIO logo styling */
 .nav-logo {
-  font-family: "FlipPrimary", sans-serif;
-  color: white;
-  font-size: 26px;
-  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
   margin: 0;
+  color: white;
 }
 
+.nav-logo .flip {
+  font-family: "FlipPrimary", sans-serif; /* bold, clean font */
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.nav-logo .studio {
+  font-family: "FlipSecondary", serif; /* elegant serif */
+  font-weight: 400;
+  font-size: 23px;
+  margin-left: 3px;
+  letter-spacing: 0.5px;
+}
+
+/* ✅ Nav links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -42,7 +58,7 @@
   color: #aaa;
 }
 
-/* Hamburger */
+/* ✅ Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -74,7 +90,7 @@
   transform: rotate(-45deg) translateY(-6px);
 }
 
-/* Overlay menu (for mobile) */
+/* ✅ Overlay menu (for mobile) */
 .overlay-menu {
   position: fixed;
   inset: 0;
@@ -110,6 +126,7 @@
   text-decoration: none;
 }
 
+/* ✅ Responsive */
 @media (max-width: 900px) {
   .nav-links {
     display: none;

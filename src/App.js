@@ -1,37 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Preloader from "./components/Preloader";
-import Navbar from "./components/Navbar";
+import "./components/Preloader.css";
 import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+  const timer = setTimeout(() => setLoaded(true), 3000);
+  return () => clearTimeout(timer);
+}, []);
+
+
   return (
     <>
-      {!loaded && <Preloader duration={3000} onFinish={() => setLoaded(true)} />}
+      {!loaded && <Preloader />}
 
       <div className={`site ${loaded ? "visible" : "hidden"}`}>
         <Navbar />
-
-        <main style={{ textAlign: "center", paddingTop: "120px" }}>
-          <h1
-            style={{
-              color: "white",
-              fontFamily: "FlipPrimary, FlipSecondary, sans-serif",
-              fontSize: "42px",
-              marginBottom: "16px",
-            }}
-          >
-            FLIPSTUDIO
+        <main className="main-content">
+          <h1 className="logo">
+            <span className="flip">FLIP</span>
+            <span className="studio">STUDIO</span>
           </h1>
 
-          <p
-            style={{
-              color: "#aaa",
-              fontFamily: "FlipSecondary, sans-serif",
-              fontSize: "16px",
-            }}
-          >
+          <p className="intro-text">
             Preloader finished. Now your main site content starts here.
           </p>
         </main>

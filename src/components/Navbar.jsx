@@ -9,7 +9,10 @@ export default function Navbar() {
     <>
       <nav className="site-nav">
         <div className="nav-left">
-          <h1 className="nav-logo">FLIPSTUDIO</h1>
+          <h1 className="nav-logo">
+            <span className="flip">FLIP</span>
+            <span className="studio">STUDIO</span>
+          </h1>
         </div>
 
         <div className="nav-right">
