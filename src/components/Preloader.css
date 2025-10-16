@@ -1,48 +1,60 @@
 @font-face {
   font-family: "FlipPrimary";
-  src: url("../fonts/CreatoDisplay-Bold.otf") format("opentype");
+  src: url("../fonts/CreatoDisplay-ExtraBold.otf") format("opentype");
 }
+
 @font-face {
   font-family: "FlipSecondary";
-  src: url("../fonts/Caghen_Demo.ttf") format("opentype");
+  src: url("../fonts/Gogh-ExtraBoldItalic.ttf") format("opentype");
 }
 
+/* Main preloader */
 .preloader {
-  height: 100vh;
-  width: 100%;
+  position: fixed;
+  inset: 0;
   background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.logo {
   color: white;
   display: flex;
-  align-items: baseline;
-  font-size: 64px;
-  font-weight: bold;
-  letter-spacing: 1px;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
 }
 
+/* Text container */
+.preloader-text {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  font-size: 76px; /* slightly larger overall */
+  line-height: 1;
+}
+
+/* FLIP letters */
 .flip {
   font-family: "FlipPrimary", sans-serif;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  font-size: 1em; /* reference size */
+  transform: translateY(3px);
 }
 
+
+/* STUDIO letters */
 .studio {
   font-family: "FlipSecondary", serif;
-  font-weight: 400;
-  margin-left: 8px;
+  font-weight: 500;
+  margin-left: 1px;
+  font-size: 1.02em; /* adjusted for equal height */
+  transform: translateY(2px);
+  letter-spacing: 0.9px;
 }
 
-/* ✅ Letter animation */
+/* Animation for letters */
 .letter {
   display: inline-block;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.4s ease forwards;
+  transform: translateY(15px);
+  animation: fadeUp 0.4s forwards;
 }
 
 @keyframes fadeUp {

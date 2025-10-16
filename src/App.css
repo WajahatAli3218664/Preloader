@@ -10,7 +10,7 @@ html, body, #root {
   color: var(--white);
 }
 
-/* Page transition */
+/* Page fade transition */
 .site.hidden {
   opacity: 0;
   pointer-events: none;
@@ -21,36 +21,51 @@ html, body, #root {
   transition: opacity 0.6s ease;
 }
 
-/* Main content center */
+/* Center main content */
 .main-content {
   text-align: center;
   padding-top: 160px;
 }
 
-/* Logo styling (matches original FLIPSTUDIO look) */
+/* ====== FLIPSTUDIO LOGO ====== */
 .logo {
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 64px;
+  align-items: baseline;
+  font-size: 64px; /* same across site */
+  line-height: 1;
   color: var(--white);
 }
 
+/* FLIP = bold, geometric, modern */
 .logo .flip {
   font-family: "FlipPrimary", sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
+  transform: translateY(4px);
 }
 
+/* STUDIO = elegant serif, slightly smaller */
 .logo .studio {
   font-family: "FlipSecondary", serif;
   font-weight: 400;
-  font-size: 0.9em; /* slightly smaller */
+  font-size: 0.82em; /* reduced just right */
   letter-spacing: 0.5px;
-  margin-left: 2px;
+  margin-left: 3px;
+  transform: translateY(2px);
 }
 
-/* Intro text below logo */
+/* Equalized for navbar version too */
+.nav-logo .flip {
+  font-size: inherit;
+  font-weight: 700;
+}
+.nav-logo .studio {
+  font-size: 0.82em;
+  font-weight: 400;
+}
+
+/* Sub text below logo */
 .intro-text {
   color: #aaa;
   font-family: "FlipSecondary", sans-serif;
@@ -58,13 +73,48 @@ html, body, #root {
   margin-top: 12px;
 }
 
-/* Fonts */
+/* ====== Letter-by-Letter Animation ====== */
+.logo span {
+  opacity: 0;
+  transform: translateY(15px);
+  display: inline-block;
+  animation: fadeInLetter 0.5s forwards;
+}
+.logo span:nth-child(1) { animation-delay: 0.1s; }
+.logo span:nth-child(2) { animation-delay: 0.2s; }
+.logo span:nth-child(3) { animation-delay: 0.3s; }
+.logo span:nth-child(4) { animation-delay: 0.4s; }
+.logo span:nth-child(5) { animation-delay: 0.6s; }
+.logo span:nth-child(6) { animation-delay: 0.7s; }
+.logo span:nth-child(7) { animation-delay: 0.8s; }
+.logo span:nth-child(8) { animation-delay: 0.9s; }
+.logo span:nth-child(9) { animation-delay: 1s; }
+.logo span:nth-child(10) { animation-delay: 1.1s; }
+
+@keyframes fadeInLetter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== Font Import ====== */
 @font-face {
   font-family: "FlipPrimary";
-  src: url("../src//fonts/CreatoDisplay-Bold.otf") format("opentype");
+  src: url("../src/fonts/CreatoDisplay-Bold.otf") format("opentype");
 }
 
 @font-face {
   font-family: "FlipSecondary";
   src: url("../src/fonts/Caghen_Demo.ttf") format("truetype");
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 42px;
+  }
+  .intro-text {
+    font-size: 14px;
+  }
 }

@@ -13,6 +13,7 @@ export default function Navbar() {
             <span className="flip">FLIP</span>
             <span className="studio">STUDIO</span>
           </h1>
+
         </div>
 
         <div className="nav-right">

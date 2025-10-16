@@ -17,25 +17,26 @@
 /* ✅ FLIPSTUDIO logo styling */
 .nav-logo {
   display: flex;
-  align-items: center;
-  margin: 0;
+  align-items: baseline;
+  font-size: 28px;
   color: white;
 }
 
 .nav-logo .flip {
-  font-family: "FlipPrimary", sans-serif; /* bold, clean font */
+  font-family: "FlipPrimary", sans-serif;
   font-weight: 700;
-  font-size: 26px;
   letter-spacing: 1px;
 }
 
 .nav-logo .studio {
-  font-family: "FlipSecondary", serif; /* elegant serif */
+  font-family: "FlipSecondary", serif;
   font-weight: 400;
-  font-size: 23px;
-  margin-left: 3px;
-  letter-spacing: 0.5px;
+  font-size: 1.05em;
+  margin-left: 4px;
+  transform: translateY(2px);
 }
+
+
 
 /* ✅ Nav links */
 .nav-links {

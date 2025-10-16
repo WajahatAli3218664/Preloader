@@ -4,10 +4,14 @@ import "./Preloader.css";
 export default function Preloader() {
   return (
     <div className="preloader">
-      <h1 className="logo">
+      <h1 className="preloader-text">
         <span className="flip">
           {["F", "L", "I", "P"].map((letter, i) => (
-            <span key={i} className="letter" style={{ animationDelay: `${i * 0.15}s` }}>
+            <span
+              key={i}
+              className="letter"
+              style={{ animationDelay: `${i * 0.15}s` }}
+            >
               {letter}
             </span>
           ))}
@@ -27,4 +31,3 @@ export default function Preloader() {
     </div>
   );
 }
-
