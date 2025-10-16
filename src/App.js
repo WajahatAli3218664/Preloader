@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Preloader from "./components/Preloader";
+import Navbar from "./components/Navbar";
+import "./App.css";
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {!loaded && <Preloader duration={3000} onFinish={() => setLoaded(true)} />}
+
+      <div className={`site ${loaded ? "visible" : "hidden"}`}>
+        <Navbar />
+
+        <main style={{ textAlign: "center", paddingTop: "120px" }}>
+          <h1
+            style={{
+              color: "white",
+              fontFamily: "FlipPrimary, FlipSecondary, sans-serif",
+              fontSize: "42px",
+              marginBottom: "16px",
+            }}
+          >
+            FLIPSTUDIO
+          </h1>
+
+          <p
+            style={{
+              color: "#aaa",
+              fontFamily: "FlipSecondary, sans-serif",
+              fontSize: "16px",
+            }}
+          >
+            Preloader finished. Now your main site content starts here.
+          </p>
+        </main>
+      </div>
+    </>
   );
 }
 
