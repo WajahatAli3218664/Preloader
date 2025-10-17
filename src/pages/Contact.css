@@ -1,0 +1,23 @@
+/* Contact page styles */
+
+.contact-page { color: var(--white); padding: 100px 20px 60px; }
+.contact-inner { display: grid; grid-template-columns: minmax(320px, 1fr) 520px; gap: 48px; align-items: center; max-width: 1100px; margin: 0 auto; }
+.contact-info { max-width: 740px; }
+.contact-info h1 { margin: 0 0 8px 0; font-family: "FlipPrimary", sans-serif; font-size: 44px; }
+.contact-info .lead { color: #cfcfcf; margin-bottom: 16px; }
+.info-block { margin-top: 18px; }
+
+.contact-form { display: flex; flex-direction: column; gap: 12px; width: 100%; background: rgba(255,255,255,0.02); padding: 28px; border-radius: 12px; box-shadow: 0 18px 40px rgba(0,0,0,0.55); box-sizing: border-box; }
+.contact-form label { font-weight: 600; margin-top: 6px; }
+.contact-form input, .contact-form textarea { margin-top: 6px; padding: 12px 14px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); background: rgba(0,0,0,0.45); color: var(--white); width: 100%; box-sizing: border-box; }
+.contact-form .err { color: #ffb4b4; margin-top: 6px; }
+.form-actions { display: flex; justify-content: flex-end; margin-top: 8px; }
+
+/* Email link styling */
+.contact-info a[href^="mailto:"] { color: #D4AF37; text-decoration: underline; }
+
+/* small animations */
+.contact-page { animation: fadeIn 420ms ease both; }
+@keyframes fadeIn { from { opacity:0; transform: translateY(8px);} to { opacity:1; transform:none; } }
+
+@media (max-width: 960px) { .contact-inner { grid-template-columns: 1fr; } .form-actions { justify-content:flex-start; } }

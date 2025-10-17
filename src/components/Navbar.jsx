@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -18,11 +19,16 @@ export default function Navbar() {
 
         <div className="nav-right">
           <ul className="nav-links">
-            {links.map((l) => (
-              <li key={l}>
-                <a href={`#${l.toLowerCase()}`}>{l}</a>
-              </li>
-            ))}
+            {links.map((l) => {
+              const path = l === 'Home' ? '/' : `/${l.toLowerCase()}`;
+              return (
+                <li key={l}>
+                  <NavLink to={path} className={({ isActive }) => isActive ? 'active' : ''}>
+                    {l}
+                  </NavLink>
+                </li>
+              );
+            })}
           </ul>
 
           <button
@@ -38,12 +44,15 @@ export default function Navbar() {
       </nav>
 
       <div className={`overlay-menu ${open ? "show" : ""}`}>
-        <ul>
-          {links.map((l) => (
-            <li key={l} onClick={() => setOpen(false)}>
-              <a href={`#${l.toLowerCase()}`}>{l}</a>
-            </li>
-          ))}
+          <ul>
+          {links.map((l) => {
+            const path = l === 'Home' ? '/' : `/${l.toLowerCase()}`;
+            return (
+              <li key={l} onClick={() => setOpen(false)}>
+                <NavLink to={path}>{l}</NavLink>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>
